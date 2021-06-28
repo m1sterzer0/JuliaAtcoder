@@ -4,7 +4,6 @@ from pathlib import Path
 
 def mkStarterFile(fn) :
     ttt = '''
-import random
 import sys
 infile = sys.stdin.buffer
 
@@ -15,17 +14,13 @@ def gss() : return gs().split()
 def gis() : return [int(x) for x in gss()]
 def gfs() : return [float(x) for x in gss()]
 
-def solve() :
-    return 0
-
 def main(infn="") :
     global infile
     infile = open(infn,"r") if infn else open(sys.argv[1],"r") if len(sys.argv) > 1 else sys.stdin
-    ans = solve()
+    ans = 0 
     sys.stdout.write(str(ans)+'\\n')
 
 if __name__ == '__main__' :
-    random.seed(19006492568)
     main()
     sys.stdout.flush()
 '''
@@ -43,16 +38,20 @@ def parseCLArgs() :
 if __name__ == "__main__" :
     clargs = parseCLArgs()
     probList = []
-    probList += [f"abc179_{x}" for x in ("A","B","C","D","E","F")]
-    probList += [f"abc178_{x}" for x in ("A","B","C","D","E","F")]
-    probList += [f"abc177_{x}" for x in ("A","B","C","D","E","F")]
-    probList += [f"abc176_{x}" for x in ("A","B","C","D","E","F")]
-    probList += [f"abc175_{x}" for x in ("A","B","C","D","E","F")]
-    probList += [f"abc174_{x}" for x in ("A","B","C","D","E","F")]
-    probList += [f"abc173_{x}" for x in ("A","B","C","D","E","F")]
-    probList += [f"abc172_{x}" for x in ("A","B","C","D","E","F")]
-    probList += [f"abc171_{x}" for x in ("A","B","C","D","E","F")]
-    probList += [f"abc170_{x}" for x in ("A","B","C","D","E","F")]
+    probList += [f"abc202_{x}" for x in ("A","B","C","D","E","F")]
+    probList += [f"abc203_{x}" for x in ("A","B","C","D","E","F")]
+    probList += [f"abc204_{x}" for x in ("A","B","C","D","E","F")]
+    probList += [f"abc205_{x}" for x in ("A","B","C","D","E","F")]
+    probList += [f"abc206_{x}" for x in ("A","B","C","D","E","F")]
+    probList += [f"abc207_{x}" for x in ("A","B","C","D","E","F")]
+
+
+    #probList += [f"abc175_{x}" for x in ("A","B","C","D","E","F")]
+    #probList += [f"abc174_{x}" for x in ("A","B","C","D","E","F")]
+    #probList += [f"abc173_{x}" for x in ("A","B","C","D","E","F")]
+    #probList += [f"abc172_{x}" for x in ("A","B","C","D","E","F")]
+    #probList += [f"abc171_{x}" for x in ("A","B","C","D","E","F")]
+    #probList += [f"abc170_{x}" for x in ("A","B","C","D","E","F")]
 
     for prob in probList :
         if not os.path.exists(f"{clargs.dir}/{prob}.py") :
