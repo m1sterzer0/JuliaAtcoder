@@ -54,7 +54,7 @@ if __name__ == "__main__" :
     clargs = parseCLArgs()
     probList = []
     probList += [f"abc200_{x}" for x in ("A","B","C","D","E","F")]
-
+    probList += [f"abc201_{x}" for x in ("A","B","C","D","E","F")]
 
     for prob in probList :
         if not os.path.exists(f"{clargs.dir}/{prob}.jl") :
