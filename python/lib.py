@@ -316,7 +316,7 @@ class factorSieve :
 class segtree :
     def __init__(self,n=1,op=sum,e=0,v=None) :
         if v is not None : n = len(v)
-        self.n = n; self.sz = 1; self.op=op; self.e=e
+        self.n = n; self.sz = 1; self.log = 0; self.op=op; self.e=e
         while self.sz < n : self.sz *= 2; self.log += 1
         self.d = [self.e for i in range(2*self.sz)]
         if v is not None :
